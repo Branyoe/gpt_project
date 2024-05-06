@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task manager</title>
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/new-task.css">
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="/tasks/">Tareas</a></li>
+                <li><a href="/tasks/new">Crear tarea</a></li>
+                <li><a href="/auth/sign-out">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <h1>Nueva Tarea</h1>
+      <form action="/tasks/new" method="POST">
+          <div class="form-group">
+              <label for="title">Título:</label>
+              <input type="text" id="title" name="title" required>
+          </div>
+          <div class="form-group">
+              <label for="description">Descripción:</label>
+              <textarea id="description" name="description" required></textarea>
+          </div>
+          <button type="submit">Crear Tarea</button>
+      </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Task Manager. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

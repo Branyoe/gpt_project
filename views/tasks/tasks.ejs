@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task manager</title>
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/tasks.css">
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="/tasks/">Tareas</a></li>
+                <li><a href="/tasks/new">Crear tarea</a></li>
+                <li><a href="/auth/sign-out">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            <h1>Lista de Tareas</h1>
+            <div class="task-list">
+                <% tasks.forEach(task => { %>
+                    <div class="task">
+                        <h2><%= task.title %></h2>
+                        <p><%= task.description %></p>
+                        <form action="/tasks/delete/<%= task.id %>" method="POST">
+                            <button type="submit">Eliminar tarea</button>
+                        </form> 
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Task Manager. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
